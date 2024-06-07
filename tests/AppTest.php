@@ -68,11 +68,10 @@ class AppTest extends TestCase
     
     #[DataProvider('additionProvider')]
     #[Test]
-    public function it_has_to_create_task(float $expected, string $inputText): void
+    public function check_transaction_commission(float $expected, string $inputText): void
     {
         // Set Up
         $dto = (new TransactionsMapper())->mapDto($inputText);
-
         // Do something
         $transactionCommission = $this->commissionService->getTransactionCommission($dto);
         // Make assertions
